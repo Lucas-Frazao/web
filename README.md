@@ -19,7 +19,7 @@
 ## Config.py
 Serves to define the secret key that the application uses when communicating. It uses a class to store configuration variables.
 
-## eb.py 
+## Web.py 
 Python script at the top level that defines the Flask application instance. 
 
 Objective: Create an application that will manage service hours for school service clubs.
