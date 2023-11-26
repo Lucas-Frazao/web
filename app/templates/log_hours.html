@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title>Log Hours</title>
+</head>
+<body>
+  <h1>Log Hours</h1>
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.hours.label }}<br>
+      {{ form.hours(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+</body>
+</html>
