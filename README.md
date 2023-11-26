@@ -1,6 +1,6 @@
-# Repo for a web app that will track service hours for clubs at my school. Below is an explanation for each of the files in this web app and what their intended purposes are. 
+# Repository for a web app that will track service hours for clubs at my school. Below is an explanation for each of the files in this web app and what their intended purposes are:
 
-##App
+## App
    Templates
    -->This folder will hold html templates that will define the look and feel for each individual web page that is displayed. 
    
