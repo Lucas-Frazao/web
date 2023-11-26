@@ -16,10 +16,10 @@
    Routes.py
    -->Serves to route the entire application and to set pointers for the URLs
    
-##Config.py
+## Config.py
 Serves to define the secret key that the application uses when communicating. It uses a class to store configuration variables.
 
-##Web.py 
+## eb.py 
 Python script at the top level that defines the Flask application instance. 
 
 Objective: Create an application that will manage service hours for school service clubs.
