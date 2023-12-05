@@ -31,4 +31,3 @@ class HoursLoggingForm(FlaskForm):
     hours = StringField('Hours', validators=[DataRequired()])
     submit = SubmitField('Log Hours')
 
-

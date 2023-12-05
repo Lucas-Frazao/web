@@ -1,23 +1,14 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
-from flask_wtf import CSRFProtect
-import os
-basedir = os.path.abspath(os.path.dirname(__file__))
-
+from flask_migrate import Migrate
+#from flask_login import LoginManager  - makes sure user is logged in before visiting other parts of the application
+from config import Config
 
 app = Flask(__name__)
-
-# Configurations
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or \
-                              'sqlite:///' + os.path.join(basedir, 'app.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Initialize extensions
+app.config.from_object(Config)
 db = SQLAlchemy(app)
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
-csrf = CSRFProtect(app)
+migrate = Migrate(app, db)
+#login = LoginManager(app)
+#login.login_view = 'login'
 
-from app import routes
+from app import routes, models

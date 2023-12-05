@@ -7,6 +7,7 @@ from app.forms import LoginForm, RegistrationForm, HoursLoggingForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 
+"""
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -21,6 +22,13 @@ def index():
         return redirect(url_for('some_authenticated_user_page'))
 
     return render_template('index.html', form=form)
+"""
+# The code below routes the index page for the students
+@app.route('/')
+@app.route('/index')
+@login_required  # This means that a user must login before accesing this route
+def index():
+    return render_template('index.html', title='Home')
 
 
 @app.route('/register', methods=['GET', 'POST']) #route for user registration
